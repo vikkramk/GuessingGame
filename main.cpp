@@ -34,13 +34,14 @@ int main() {
 			while (!valid) {
 				std::cout << "Try to guess it:";
 				std::cin >> guess;
-				if (!std::cin ){
+				if (!std::cin || std::cin.peek()){
 					std::cout << "Please. You're wasting everybody's time.\n";
 					std::cin.clear();
 					std::cin.ignore(1000, '\n');
 				}
-				else
+				else {
 					valid = true;
+				}
 			}
 
 			if (guess < target)
